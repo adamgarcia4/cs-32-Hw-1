@@ -1,7 +1,131 @@
 #include "set.h"
+#include <string>
+#include <assert.h>
+
+void adamTest();
+void adamTestSet();
+void test1();
+void test2();
+void test3();
+void test4();
+void test5();
+void test6();
 
 int main()
 {
-	Set s;
-	s.empty();
+	adamTestSet();
+	system("pause");
 }
+
+void adamTest()
+{
+	Set s;
+	s.insert("one");
+	s.insert("two");
+	s.insert("three");
+	s.dump();
+	cout << endl << endl;
+	s.erase("two");
+	s.dump();
+
+}
+
+void adamTestSet()
+{
+	Set a, b;
+	a.insert("a1");
+	b.insert("b1");
+	a.swap(b);
+	cerr << "A set is: " << endl;
+	a.dump();
+	cerr << endl << "B set is: " << endl;
+	b.dump();
+
+}
+
+//passed insertion
+void test1()
+{
+	
+	Set ss;
+	ss.insert("A");
+	ss.insert("C");
+	ss.insert("A");
+	ss.insert("B");
+	string all;
+	for (int k = 0; k < ss.size(); k++)
+	{
+		string x;
+		ss.get(k, x);
+		all += x;
+	}
+	cerr << "all is: "<<all << endl;
+	ss.dump();
+}
+
+//Passed insert and get functions
+void test2()
+{
+	Set ss;
+	ss.insert("pita");
+	ss.insert("roti");
+	string s1;
+	assert(ss.get(1, s1) && (s1 == "roti" || s1 == "pita"));
+	string s2;
+	assert(ss.get(1, s2) && s2 == s1);
+}
+
+//Passed contains function
+void test3()
+{
+	Set ss;
+	ss.insert("focaccia");
+	assert(!ss.contains(""));
+	ss.insert("tortilla");
+	ss.insert("");
+	ss.insert("lavash");
+	assert(ss.contains(""));
+	ss.erase("focaccia");
+	assert(ss.size() == 3 && ss.contains("lavash") && ss.contains("tortilla") &&
+		ss.contains(""));
+}
+
+//failed swap function.
+void test4()
+{
+	Set ss1;
+	ss1.insert("injera");
+	Set ss2;
+	ss2.insert("matzo");
+	ss2.insert("dosa");
+	ss1.swap(ss2);
+	assert(ss1.size() == 2 && ss1.contains("matzo") && ss1.contains("dosa") &&
+		ss2.size() == 1 && ss2.contains("injera"));
+}
+
+//passed
+void test5()
+{
+	Set s;
+	assert(s.empty());
+	ItemType x = "arepa";
+	assert(!s.get(42, x) && x == "arepa"); // x unchanged by get failure
+	s.insert("chapati");
+	assert(s.size() == 1);
+	assert(s.get(0, x) && x == "chapati");
+	cout << "Passed all tests" << endl;
+}
+
+//passed switching ItemType typedef
+void test6()
+{
+	//Set s;
+	//assert(s.empty());
+	//ItemType x = 9876543;
+	//assert(!s.get(42, x) && x == 9876543); // x unchanged by get failure
+	//s.insert(123456789);
+	//assert(s.size() == 1);
+	//assert(s.get(0, x) && x == 123456789);
+	//cout << "Passed all tests" << endl;
+}
+
