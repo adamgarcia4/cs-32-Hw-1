@@ -1,7 +1,16 @@
+#ifndef SET_H
+#define SET_H
+
+#include <string>
+#include <iostream>
+using namespace std;
+
 class Set
 {
 public:
 	Set();         // Create an empty set.
+
+	~Set(); //destructor for set
 
 	bool empty();  // Return true if the set is empty, otherwise false.
 
@@ -19,7 +28,7 @@ public:
 	// value was removed; otherwise, leave the set unchanged and
 	// return false.
 
-	bool contains(const std::string& value);
+	bool contains(const std::string& value) const; //Doesn't modify member vars.
 	// Return true if the value is in the set, otherwise false.
 
 	bool get(int i, std::string& value);
@@ -29,4 +38,11 @@ public:
 
 	void swap(Set& other);
 	// Exchange the contents of this set with the other one.
+
+private:
+	typedef string ItemType;
+
+	ItemType * m_Set[];//create an array of string pointers
 };
+
+#endif
