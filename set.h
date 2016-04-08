@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
-typedef string ItemType;
+typedef unsigned long ItemType;
 
 const int DEFAULT_MAX_ITEMS = 100;
 
@@ -35,7 +35,7 @@ public:
 	bool contains(const ItemType& value) const; //Doesn't modify member vars.
 	// Return true if the value is in the set, otherwise false.
 
-	bool get(int i, ItemType& value);
+	bool get(int i, ItemType& value) const;
 	// If 0 <= i < size(), copy into value an item in the set and
 	// return true.  Otherwise, leave value unchanged and return false.
 	// (See below for details about this function.)

@@ -79,7 +79,7 @@ bool Set::contains(const ItemType & value) const
 // If 0 <= i < size(), copy into value an item in the set and
 // return true.  Otherwise, leave value unchanged and return false.
 // (See below for details about this function.)
-bool Set::get(int i, ItemType & value)
+bool Set::get(int i, ItemType & value) const
 {
 	if (i < 0 || i > size())
 		return false;
@@ -93,11 +93,25 @@ bool Set::get(int i, ItemType & value)
 // Exchange the contents of this set with the other one.
 void Set::swap(Set & other)
 {
+
+
 	//Set temp;
 	//temp = other;
 	//int firstSize = this->size();
 	//int secondSize = other.size();
+	int tempSize = this->size();
+	this->m_arrayPosition = other.m_arrayPosition;
+	other.m_arrayPosition = tempSize;
 	
+	ItemType tempValue;
+	for (int i = 0; i < 100; i++)
+	{
+		tempValue = m_set[i];
+		this->m_set[i] = other.m_set[i];
+		other.m_set[i] = tempValue;
+	}
+
+
 	//for (int i = 0; i < secondSize; i++) //Iterate and erase all members of other's set.
 	//{
 	//	ItemType tempValue;
@@ -114,10 +128,23 @@ void Set::swap(Set & other)
 	//	other.insert(m_set[i]);
 	//}
 	
-	Set* temp = &other; //temporary pointer holds the address of other, which is b.
-	other = *this; //other gets assigned the dereference of this a.  Other should hold 'a'.
-	*this = *temp;
+	//m_set, m_arrayPosition
+	//ItemType* tmpArr = this->m_set;
+	//int tmpNum = this->m_arrayPosition;
 
+	//this->m_set = other.m_set;
+	//this->m_arrayPosition = other.m_arrayPosition;
+
+	//other.m_set = tmpArr;
+	//other.m_arrayPosition = tmpNum;
+
+	
+	
+
+
+
+
+	//salil.kanetkar@gmail.com
 
 
 

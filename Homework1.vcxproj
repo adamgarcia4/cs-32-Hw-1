@@ -112,9 +112,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="set.cpp" />
+    <ClCompile Include="SSNSet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="set.h" />
+    <ClInclude Include="SSNSet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
