@@ -26,7 +26,7 @@ void SSNSet::print() const
 	for (int i = 0; i < m_set.size(); i++)
 	{
 		m_set.get(i, item);
-		cout << item << endl;
+		cout << item<<endl;
 
 	}
 }

@@ -110,12 +110,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="set.cpp" />
+    <ClCompile Include="newSet.cpp" />
     <ClCompile Include="SSNSet.cpp" />
+    <ClCompile Include="testSSNSet.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="set.h" />
+    <ClInclude Include="newSet.h" />
     <ClInclude Include="SSNSet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

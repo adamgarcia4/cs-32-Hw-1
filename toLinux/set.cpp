@@ -1,4 +1,4 @@
-#include "Set.h"
+#include "set.h"
 
 Set::Set() : m_arrayPosition(0)
 {
@@ -102,7 +102,7 @@ void Set::swap(Set & other)
 	int tempSize = this->size();
 	this->m_arrayPosition = other.m_arrayPosition;
 	other.m_arrayPosition = tempSize;
-
+	
 	ItemType tempValue;
 	for (int i = 0; i < 100; i++)
 	{
@@ -127,7 +127,7 @@ void Set::swap(Set & other)
 	//	other.erase(tempValue);
 	//	other.insert(m_set[i]);
 	//}
-
+	
 	//m_set, m_arrayPosition
 	//ItemType* tmpArr = this->m_set;
 	//int tmpNum = this->m_arrayPosition;
@@ -138,8 +138,8 @@ void Set::swap(Set & other)
 	//other.m_set = tmpArr;
 	//other.m_arrayPosition = tmpNum;
 
-
-
+	
+	
 
 
 
@@ -155,7 +155,7 @@ void Set::dump() const
 	for (int i = 0; i < m_arrayPosition; i++)
 	{
 		cerr << "array pos: " << i << endl;
-		cerr << "set element is: " << m_set[i] << endl;
+		cerr << "set element is: " << m_set[i]<< endl;
 	}
 
 }

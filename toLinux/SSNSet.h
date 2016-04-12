@@ -1,7 +1,7 @@
 #ifndef SSNSET_H
 #define SSNSET_H
 
-#include "Set.h"
+#include "newSet.h"
 #include <iostream>
 using namespace std;
 

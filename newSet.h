@@ -1,7 +1,8 @@
-#ifndef SET_H
-#define SET_H
+#ifndef NEWSET_H
+#define NEWSET_H
 
 #include <string>
+#include <cstring>
 #include <iostream>
 using namespace std;
 typedef unsigned long ItemType;
@@ -12,9 +13,15 @@ class Set
 {
 public:
 
-	Set();         // Create an empty set.
+	Set(int setSize);  //default constructor
 
-	~Set(); //destructor for set
+	Set();  //default constructor
+
+	Set(const Set& other); //copy constructor.  Used to perform a deep copy of dynamically allocated information.
+
+	~Set(); //destructor for set.  Free up set resources to prevent memory leak.
+
+	Set& operator=(const Set& rhs);  //Set up assignment 
 
 	bool empty() const;  // Return true if the set is empty, otherwise false.
 
@@ -47,8 +54,10 @@ public:
 
 private:
 
-	ItemType m_set[DEFAULT_MAX_ITEMS];  //create an array of predefined size.
+	ItemType* m_set;  //create a pointer to an ItemType.  This will hold array.
+					  //http://www.cplusplus.com/doc/tutorial/dynamic/
 	int m_arrayPosition;
+	int m_maxSize;
 };
 
 #endif
